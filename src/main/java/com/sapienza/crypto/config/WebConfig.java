@@ -57,13 +57,12 @@ public class WebConfig implements WebMvcConfigurer {
 
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		registry.addResourceHandler("/resources/**").addResourceLocations("classpath:/org/btrust/**")
+		registry.addResourceHandler("/resources/**").addResourceLocations("classpath:/**")
 				.setCachePeriod(31556926);
 	}
 
 	@Override
 	public void addCorsMappings(CorsRegistry registry) {
-		// TODO за продукционна среда да се смени пътя
 		registry.addMapping("/**").allowedMethods("GET", "POST", "OPTIONS", "PUT", "DELETE");
 	}
 
